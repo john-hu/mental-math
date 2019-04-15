@@ -1,9 +1,10 @@
 import React, { PureComponent } from 'react';
 import Grid from '@material-ui/core/Grid';
-import Paper from '@material-ui/core/Paper';
-import { withStyles } from "@material-ui/core/styles";
+import { withStyles } from '@material-ui/core/styles';
 
-const styles = theme => ({
+import Question from './Question';
+
+const styles = (theme) => ({
   root: {
     flexGrow: 1
   },
@@ -13,42 +14,42 @@ const styles = theme => ({
   },
   question: {
     padding: theme.spacing.unit * 2,
-    textAlign: 'center',
     color: theme.palette.text.secondary,
-    height: '200px'
-  },
+    minHeight: '240px'
+  }
 });
 
+const rows = [
+  {
+    min: 0,
+    max: 10
+  },
+  {
+    min: -10,
+    max: 10
+  },
+  {
+    min: 0,
+    max: 50
+  },
+  {
+    min: -10,
+    max: 10
+  }
+];
+
 class App extends PureComponent {
+  handleAnswered = (userAnswer, answer, correct) => {
+    alert(correct ? 'You are correct' : `The correct answer is ${answer}`);
+  };
+
   render() {
     const { classes } = this.props;
     return (
-      <div className={classes.root}>
+      <div className={classes.root} onKeyPress={this.handleAnswerChanged}>
         <Grid container spacing={24} className={classes.grid}>
-          <Grid item xs={12} sm={6} md={4} >
-            <Paper className={classes.question}>
-              This is a question
-            </Paper>
-          </Grid>
           <Grid item xs={12} sm={6} md={4}>
-            <Paper className={classes.question}>
-              This is a question
-            </Paper>
-          </Grid>
-          <Grid item xs={12} sm={6} md={4}>
-            <Paper className={classes.question}>
-              This is a question
-            </Paper>
-          </Grid>
-          <Grid item xs={12} sm={6} md={4}>
-            <Paper className={classes.question}>
-              This is a question
-            </Paper>
-          </Grid>
-          <Grid item xs={12} sm={6} md={4}>
-            <Paper className={classes.question}>
-              This is a question
-            </Paper>
+            <Question className={classes.question} rows={rows} header="Q12" onAnswer={this.handleAnswered} />
           </Grid>
         </Grid>
       </div>

@@ -2,7 +2,7 @@
   "name": "mental-calculation",
   "version": "0.1.0",
   "private": false,
-  "homepage": "https://john-hu.github.io/mental-math",
+  "homepage": "https://john-hu.github.io/mental-math/",
   "dependencies": {
     "@material-ui/core": "^3.9.3",
     "@material-ui/icons": "^3.0.2",

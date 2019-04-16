@@ -56,6 +56,16 @@ class Question extends PureComponent {
     };
   }
 
+  componentWillReceiveProps(nextProps) {
+    if (nextProps.header !== this.props.header) {
+      const candidates = nextProps.rows.map(({ min, max }) => Math.round(Math.random() * max + min));
+      this.setState({
+        candidates,
+        answer: candidates.reduce((acc, v) => acc + v, 0)
+      });
+    }
+  }
+
   handleKeyPressed = (e) => {
     const { onAnswer } = this.props;
     if (!e.target.value || e.key !== 'Enter' || !onAnswer) {
@@ -63,6 +73,7 @@ class Question extends PureComponent {
     }
     const userAnswer = +e.target.value;
     onAnswer(userAnswer, this.state.answer, userAnswer === this.state.answer);
+    e.target.value = '';
   };
 
   renderRow = (value, index) => {

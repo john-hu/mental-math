@@ -32,12 +32,12 @@ const rows = [
     max: 10
   },
   {
-    min: -10,
+    min: -5,
     max: 10
   },
   {
     min: 0,
-    max: 50
+    max: 69
   },
   {
     min: -10,

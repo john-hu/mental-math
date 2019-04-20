@@ -1,7 +1,7 @@
 self.__precacheManifest = [
   {
-    "revision": "ba11d937e5e6778b6839",
-    "url": "/mental-math/static/js/main.12fe7a8c.chunk.js"
+    "revision": "b53846db859bbee1b139",
+    "url": "/mental-math/static/js/main.a537be7e.chunk.js"
   },
   {
     "revision": "c3b706018aa4bf152c3c",
@@ -12,7 +12,7 @@ self.__precacheManifest = [
     "url": "/mental-math/static/js/2.3581673f.chunk.js"
   },
   {
-    "revision": "7983e8f722812535f3ccd1c54988192f",
+    "revision": "fe0614298a85f5536daba33c37089259",
     "url": "/mental-math/index.html"
   }
 ];

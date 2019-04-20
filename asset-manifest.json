@@ -1,11 +1,11 @@
 {
-  "main.js": "/mental-math/static/js/main.12fe7a8c.chunk.js",
-  "main.js.map": "/mental-math/static/js/main.12fe7a8c.chunk.js.map",
+  "main.js": "/mental-math/static/js/main.a537be7e.chunk.js",
+  "main.js.map": "/mental-math/static/js/main.a537be7e.chunk.js.map",
   "runtime~main.js": "/mental-math/static/js/runtime~main.a3a010f3.js",
   "runtime~main.js.map": "/mental-math/static/js/runtime~main.a3a010f3.js.map",
   "static/js/2.3581673f.chunk.js": "/mental-math/static/js/2.3581673f.chunk.js",
   "static/js/2.3581673f.chunk.js.map": "/mental-math/static/js/2.3581673f.chunk.js.map",
   "index.html": "/mental-math/index.html",
-  "precache-manifest.9c68699ca9ab985502265cea7ccc9b22.js": "/mental-math/precache-manifest.9c68699ca9ab985502265cea7ccc9b22.js",
+  "precache-manifest.32cf9ed0f3d4d938c04cc7d119af038f.js": "/mental-math/precache-manifest.32cf9ed0f3d4d938c04cc7d119af038f.js",
   "service-worker.js": "/mental-math/service-worker.js"
 }

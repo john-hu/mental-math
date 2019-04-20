@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/3.6.3/workbox-sw.js");
 
 importScripts(
-  "/mental-math/precache-manifest.769b8aa6c9f220288f7691cdf2e08f17.js"
+  "/mental-math/precache-manifest.9c68699ca9ab985502265cea7ccc9b22.js"
 );
 
 workbox.clientsClaim();

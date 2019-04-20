@@ -8,6 +8,7 @@ import { withStyles } from '@material-ui/core/styles';
 import AccessTimeOutlinedIcon from '@material-ui/icons/AccessTimeOutlined';
 
 import Question from './Question';
+import ResultDialog from './ResultDialog';
 
 const styles = (theme) => ({
   root: {
@@ -21,7 +22,7 @@ const styles = (theme) => ({
     flexGrow: 1
   },
   timerBox: {
-    marginLeft: '8px',
+    marginLeft: '8px'
   },
   headerIcon: {
     verticalAlign: 'sub'
@@ -59,20 +60,23 @@ class App extends PureComponent {
       answeredCount: 0,
       correctCount: 0,
       elapsed: 0,
+      resultVisible: false,
       startTime: null,
       timerId: null
     };
   }
 
   handleTimerUpdate = () => this.setState({ elapsed: new Date().getTime() - this.state.startTime });
+  handleResultDialogClosed = () => this.setState({ resultVisible: false });
 
   handleTimerStartStop = (fn) => {
     if (this.state.timerId) {
       window.clearInterval(this.state.timerId);
       this.setState(
         {
-          timerId: null,
-          startTime: 0
+          resultVisible: true,
+          startTime: 0,
+          timerId: null
         },
         typeof fn === 'function' ? fn : undefined
       );
@@ -108,7 +112,7 @@ class App extends PureComponent {
 
   render() {
     const { classes } = this.props;
-    const { answeredCount, correctCount, elapsed, timerId } = this.state;
+    const { answeredCount, correctCount, elapsed, resultVisible, timerId } = this.state;
     const score = `(${correctCount} / ${answeredCount})`;
     return (
       <div className={classes.root} onKeyPress={this.handleAnswerChanged}>
@@ -136,6 +140,13 @@ class App extends PureComponent {
             />
           </Grid>
         </Grid>
+        <ResultDialog
+          answered={answeredCount}
+          correct={correctCount}
+          elapsed={elapsed}
+          open={resultVisible}
+          onClose={this.handleResultDialogClosed}
+        />
       </div>
     );
   }

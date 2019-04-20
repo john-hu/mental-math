@@ -44,7 +44,7 @@ const rows = [
     max: 10
   },
   {
-    min: 0,
+    min: 16,
     max: 69
   },
   {

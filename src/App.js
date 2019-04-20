@@ -5,6 +5,7 @@ import Grid from '@material-ui/core/Grid';
 import Toolbar from '@material-ui/core/Toolbar';
 import Typography from '@material-ui/core/Typography';
 import { withStyles } from '@material-ui/core/styles';
+import AccessTimeOutlinedIcon from '@material-ui/icons/AccessTimeOutlined';
 
 import Question from './Question';
 
@@ -18,6 +19,12 @@ const styles = (theme) => ({
   },
   grow: {
     flexGrow: 1
+  },
+  timerBox: {
+    marginLeft: '8px',
+  },
+  headerIcon: {
+    verticalAlign: 'sub'
   },
   question: {
     padding: theme.spacing.unit * 2,
@@ -108,7 +115,11 @@ class App extends PureComponent {
         <AppBar>
           <Toolbar>
             <Typography className={classes.grow} color="inherit" variant="h6">
-              Score: {score}, Elapsed time: {Math.round(elapsed / 1000)}s
+              Score: {score},
+              <span className={classes.timerBox}>
+                <AccessTimeOutlinedIcon className={classes.headerIcon} />
+                : {Math.round(elapsed / 1000)}s
+              </span>
             </Typography>
             <Button color="inherit" onClick={this.handleTimerStartStop}>
               {timerId ? 'Stop' : 'Start'}

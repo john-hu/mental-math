@@ -29,9 +29,7 @@ class ResultDialog extends PureComponent {
     const secondUsed = Math.round(elapsed / 1000);
     return (
       <Dialog open={open} onClose={onClose}>
-        <DialogTitle>
-          <Typography variant="title">Your result:</Typography>
-        </DialogTitle>
+        <DialogTitle>Your result:</DialogTitle>
         <List>
           <ListItem>
             <Typography>You did a great job. You answered {answered} questions with {correct} correct answers within {secondUsed} seconds.</Typography>
